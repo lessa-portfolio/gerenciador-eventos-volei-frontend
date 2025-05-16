@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://rasgamortalha.kalute.com.br'
+  apiUrl: 'https://gerenciador-eventos-volei-backend.onrender.com'
 };
