@@ -1,0 +1,84 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  padding: 24px 16px;
+  color: #F2F2F2;
+}
+
+.proximos-eventos {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 8px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  background-color: #1C2133;
+  border-left: #FD9903 8px solid;
+  border-radius: 8px;
+  padding: 12px 12px 12px 20px;
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-bottom: 8px;
+    border-bottom: #363B4C 1px solid;
+    font-size: 14px;
+  }
+
+  .card-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    border-top: #363B4C 1px solid;
+    font-size: 14px;
+  }
+}
+
+.nome-evento {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.localizacao-wrapper {
+  display: flex;
+  gap: 8px;
+
+  .icon-pin {
+    width: 24px;
+    height: 24px;
+  }
+
+  .local-evento {
+    width: 100%;
+  }
+}

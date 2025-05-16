@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="proximos-eventos">
+  <h3 class="title">Próximos eventos</h3>
+
+  <div class="card" *ngFor="let evento of eventos" (click)="redirectToEvent(evento.id)">
+    <div class="card-header">
+      <span class="data-evento">{{ evento.data | formatarData }}</span>
+      <span>&middot;</span>
+      <span class="hora-evento">{{ evento.horarioInicio }} - {{ evento.horarioFim }}</span>
+    </div>
+
+    <div class="card-info">
+      <p class="nome-evento">{{ evento.titulo }}</p>
+      <div class="localizacao-wrapper">
+        <img src="assets/icon-pin.svg" class="icon-pin" alt="pin" />
+        <div class="local-evento">{{ evento.localizacao }}</div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span class="valor-evento">Valor: R$ {{ evento.preco }}</span>
+      <span class="vagas-evento">{{ evento.qtdPreenchidas }}/{{ evento.qtdVagas }} vagas</span>
+    </div>
+  </div>
+</div>

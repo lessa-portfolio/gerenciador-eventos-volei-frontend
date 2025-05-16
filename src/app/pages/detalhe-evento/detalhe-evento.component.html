@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="detalhes-evento" *ngIf="detalheEvento">
+  <h3 class="title">{{ detalheEvento.titulo }}</h3>
+
+  <div class="imagem-container">
+    <img src="/assets/unisport.png" alt="unisport" />
+  </div>
+
+  <div class="evento">
+    <div class="evento-info">
+      <span class="data-evento">{{ detalheEvento.data | formatarData }}</span>
+      <span>&middot;</span>
+      <span class="hora-evento">{{ detalheEvento.horarioInicio }} - {{ detalheEvento.horarioFim }}</span>
+      <span>&middot;</span>
+      <span class="valor-evento">R$ {{ detalheEvento.preco }}</span>
+    </div>
+
+    <div class="evento-local">
+      <div class="localizacao-wrapper">
+        <img src="assets/icon-pin.svg" class="icon-pin" alt="pin" />
+        <div class="local-evento">{{ detalheEvento.localizacao }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detalhes-inscritos">
+    <div class="inscrito" *ngFor="let inscrito of detalheEvento.inscritos; let i = index">
+      <span>{{ i + 1 }}. {{ inscrito.username}}</span>
+      <span [ngClass]="{'status-pendente': inscrito.status === 'pendente', 'status-confirmado': inscrito.status === 'confirmado'}">
+        {{ inscrito.status}}
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="botao-fixo">
+  <button class="btn btn-primary" (click)="aoClicarNoBotao()" [disabled]="statusUsuarioEvento === 'confirmado'">
+    {{ statusUsuarioEvento === 'pendente' ? 'CONFIRMAR PAGAMENTO' : 'RESERVAR VAGA' }}
+  </button>
+</div>

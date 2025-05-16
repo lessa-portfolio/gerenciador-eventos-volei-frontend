@@ -1,0 +1,18 @@
+<div class="header-container">
+  <div class="icon-container" (click)="irParaEventos()">
+    <img src="assets/icon-back.svg" class="icon" alt="back" />
+    <span class="icon-descricao">voltar</span>
+  </div>
+
+  <img src="assets/logo.svg" class="logo" alt="Logo" />
+
+  <div class="icon-container" *ngIf="!autenticado" (click)="irParaLogin()">
+    <img src="assets/icon-login.svg" class="icon" alt="login" />
+    <span class="icon-descricao">login</span>
+  </div>
+
+  <div class="icon-container" *ngIf="autenticado" (click)="logout()">
+    <img src="assets/icon-logout.svg" class="icon" alt="logout" />
+    <span class="icon-descricao">sair</span>
+  </div>
+</div>

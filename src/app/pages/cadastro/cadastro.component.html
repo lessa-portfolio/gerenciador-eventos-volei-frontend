@@ -1,0 +1,22 @@
+<img src="assets/logo.svg" class="logo" alt="Logo" />
+
+<form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
+  <h1>Cadastre-se</h1>
+  <div class="form-group">
+    <label for="email">e-mail</label>
+    <input id="email" type="text" formControlName="email" placeholder="digite seu e-mail" />
+  </div>
+  <div class="form-group">
+    <label for="username">usuário</label>
+    <input id="username" type="text" formControlName="username" placeholder="digite seu usuário" />
+  </div>
+  <div class="form-group">
+    <label for="senha">senha</label>
+    <input id="senha" type="password" formControlName="senha" placeholder="digite sua senha" />
+  </div>
+  <div class="recuperar-senha">
+    <a href="#">Recuperar senha</a>
+  </div>
+  <button class="btn btn-primary" type="submit">CADASTRAR</button>
+  <button class="btn btn-secundary" type="button" (click)="redirectToLogin()">LOGIN</button>
+</form>
